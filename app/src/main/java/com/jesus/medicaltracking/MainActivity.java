@@ -2,6 +2,13 @@ package com.jesus.medicaltracking;
 
 import android.os.Bundle;
 
+import com.jesus.medicaltracking.database.BaseDatos;
+import com.jesus.medicaltracking.model.NotasDB;
+
+import io.realm.Realm;
+
+//agregue comentario
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,11 +21,27 @@ import com.jesus.medicaltracking.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
+    private Realm con;
+
     private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        con = BaseDatos.getInstance().conectar(getBaseContext());
+        long cantidad = con.where(NotasDB.class).count();
+        if (cantidad ==0){
+            NotasDB notas = new NotasDB();
+            notas.setId(1);
+            notas.setNota("Escribir observaciones");
+
+            con.beginTransaction();
+            con.copyToRealmOrUpdate(notas);
+            con.commitTransaction();
+        }
+
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
