@@ -16,10 +16,10 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.jesus.medicaltracking.ui.inf.InfFragment"
-        android:label="@string/title_inf"
-        tools:layout="@layout/fragment_inf" />
+        android:id="@+id/navigation_acerca_de"
+        android:name="com.jesus.medicaltracking.ui.acercaDe.AcercaDeFragment"
+        android:label="@string/title_acerca_de"
+        tools:layout="@layout/fragment_acerca_de" />
 
 
 </navigation>

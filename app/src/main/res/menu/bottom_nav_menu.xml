@@ -10,8 +10,8 @@
         android:icon="@drawable/ic_home_black_24dp"
         android:title="@string/title_home" />
     <item
-        android:id="@+id/navigation_dashboard"
-        android:icon="@drawable/ic_dashboard_black_24dp"
-        android:title="@string/title_inf" />
+        android:id="@+id/navigation_acerca_de"
+        android:icon="@drawable/ic_acerca_de_black_24dp"
+        android:title="@string/title_acerca_de" />
 
 </menu>

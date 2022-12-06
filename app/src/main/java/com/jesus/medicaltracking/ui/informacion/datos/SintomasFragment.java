@@ -1,4 +1,4 @@
-package com.jesus.medicaltracking;
+package com.jesus.medicaltracking.ui.informacion.datos;
 
 import android.os.Bundle;
 
@@ -8,12 +8,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.jesus.medicaltracking.R;
+
 /**
- * A simple {@link Fragment} subcl
- * Use the {@link MedicamentoFragment#newInstance} factory method to
+ * A simple {@link Fragment} subclass.
+ * Use the {@link SintomasFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class MedicamentoFragment extends Fragment {
+public class SintomasFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,7 +26,7 @@ public class MedicamentoFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public MedicamentoFragment() {
+    public SintomasFragment() {
         // Required empty public constructor
     }
 
@@ -34,11 +36,11 @@ public class MedicamentoFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment MedicamentoFragment.
+     * @return A new instance of fragment SintomasFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static MedicamentoFragment newInstance(String param1, String param2) {
-        MedicamentoFragment fragment = new MedicamentoFragment();
+    public static SintomasFragment newInstance(String param1, String param2) {
+        SintomasFragment fragment = new SintomasFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -59,6 +61,6 @@ public class MedicamentoFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_medicamento, container, false);
+        return inflater.inflate(R.layout.fragment_sintomas, container, false);
     }
 }

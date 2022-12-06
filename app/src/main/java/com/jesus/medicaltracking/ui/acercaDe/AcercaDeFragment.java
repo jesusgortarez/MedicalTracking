@@ -1,27 +1,26 @@
-package com.jesus.medicaltracking.ui.inf;
+package com.jesus.medicaltracking.ui.acercaDe;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.jesus.medicaltracking.databinding.FragmentInfBinding;
+import com.jesus.medicaltracking.databinding.FragmentAcercaDeBinding;
 
-public class InfFragment extends Fragment {
+public class AcercaDeFragment extends Fragment {
 
-    private FragmentInfBinding binding;
+    private FragmentAcercaDeBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        InfViewModel infViewModel =
-                new ViewModelProvider(this).get(InfViewModel.class);
+        AcercaDeViewModel acercaDeViewModel =
+                new ViewModelProvider(this).get(AcercaDeViewModel.class);
 
-        binding = FragmentInfBinding.inflate(inflater, container, false);
+        binding = FragmentAcercaDeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
 

@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-
-    tools:context=".ui.inf.InfFragment" >
+    tools:context=".ui.acercaDe.AcercaDeFragment" >
 
     <TextView
         android:id="@+id/razonTextView"
@@ -16,7 +15,7 @@
         android:textSize="24sp" />
 
     <TextView
-        android:id="@+id/razonInfTextView"
+        android:id="@+id/razonAcercaDeTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Porque es proyecto" />
