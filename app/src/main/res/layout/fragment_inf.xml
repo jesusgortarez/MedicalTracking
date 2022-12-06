@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    tools:context=".ui.inf.InfFragment" >
+
+    <TextView
+        android:id="@+id/razonTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Razon de la app"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/razonInfTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Porque es proyecto" />
+
+
+    <TextView
+        android:id="@+id/diseñadoresTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Diseñadores"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/diseñadoresInfTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="25dp" />
+</LinearLayout>
