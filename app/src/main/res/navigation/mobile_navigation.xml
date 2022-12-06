@@ -5,10 +5,10 @@
     android:id="@+id/mobile_navigation"
     app:startDestination="@+id/navigation_home">
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.jesus.medicaltracking.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_informacion"
+        android:name="com.jesus.medicaltracking.ui.informacion.InformacionFragment"
+        android:label="@string/title_informacion"
+        tools:layout="@layout/fragment_informacion" />
     <fragment
         android:id="@+id/navigation_home"
         android:name="com.jesus.medicaltracking.ui.home.HomeFragment"
