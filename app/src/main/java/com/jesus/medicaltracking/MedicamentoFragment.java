@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 /**
- * A simple {@link Fragment} subclass.
+ * A simple {@link Fragment} subcla
  * Use the {@link MedicamentoFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
