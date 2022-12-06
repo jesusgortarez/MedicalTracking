@@ -22,14 +22,11 @@ import com.jesus.medicaltracking.databinding.ActivityMainBinding;
 public class MainActivity extends AppCompatActivity {
 
     private Realm con;
-
     private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
         con = BaseDatos.getInstance().conectar(getBaseContext());
         long cantidad = con.where(NotasDB.class).count();
         if (cantidad ==0){
@@ -41,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
             con.copyToRealmOrUpdate(notas);
             con.commitTransaction();
         }
-
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());

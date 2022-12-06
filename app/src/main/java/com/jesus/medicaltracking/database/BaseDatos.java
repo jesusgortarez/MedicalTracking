@@ -7,10 +7,12 @@ import io.realm.RealmConfiguration;
 
 public class BaseDatos {
 
+
     private static BaseDatos instance = new BaseDatos();
     public static BaseDatos getInstance(){
         return instance;
     }
+
     private Realm con;
 
     public Realm conectar(Context context){
@@ -22,6 +24,5 @@ public class BaseDatos {
          }
          return con;
     }
-
 
 }
