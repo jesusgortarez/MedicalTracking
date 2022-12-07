@@ -9,6 +9,6 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Fragment medicamento" />
+        android:text="Fragment debe de tener un listview de los medicamentos existentes en la base de datos, y en cualquier otro color los que esten agregados a la base de datos de este dia" />
 
 </FrameLayout>

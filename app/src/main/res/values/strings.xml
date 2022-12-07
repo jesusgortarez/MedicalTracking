@@ -5,6 +5,5 @@
     <string name="title_activity_main2">MainActivity2</string>
     <string name="title_inicio">Inicio</string>
     <string name="title_acerca_de">Acerca de la app</string>
-    <string name="title_notifications">Notifications</string>
     <string name="title_informacion">Informacion</string>
 </resources>

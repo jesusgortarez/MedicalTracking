@@ -3,13 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SintomasFragment">
+    tools:context=".ConfigSintomasListFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Fragment debe de tener un listview de los sintomas existentes en la base de datos, y en cualquier otro color los que esten agregados a la base de datos de este dia" />
+        android:text="Aqui debe estar un listview de los sintomas existente en la base de datos, recuerda mostrar un mensaje de agregado correctamente
+        Ademas al hacer doble click en alguno de los sintomas debe eliminarlo, de preferencia con mensaje de advertencia y el mensaje de borrado correctamente" />
 
 
 </FrameLayout>
