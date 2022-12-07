@@ -5,8 +5,13 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
+import android.widget.TextView;
 
 import com.google.android.material.tabs.TabLayout;
+import com.jesus.medicaltracking.database.BaseDatos;
+import com.jesus.medicaltracking.model.NotasDB;
+
+import io.realm.Realm;
 
 public class DatosDiaActivity extends AppCompatActivity {
 
@@ -29,7 +34,6 @@ public class DatosDiaActivity extends AppCompatActivity {
         datosdiaAdapter.addFragment(new AnimoFragment(),"Animo");
         datosdiaAdapter.addFragment(new MedicamentoFragment(),"Medicamentos");
         viewPager.setAdapter(datosdiaAdapter);
-
 
     }
 }

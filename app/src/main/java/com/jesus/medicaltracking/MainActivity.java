@@ -1,6 +1,7 @@
 package com.jesus.medicaltracking;
 
 import android.os.Bundle;
+import android.widget.TextView;
 
 import com.jesus.medicaltracking.database.BaseDatos;
 import com.jesus.medicaltracking.model.NotasDB;
@@ -38,7 +39,6 @@ public class MainActivity extends AppCompatActivity {
             con.copyToRealmOrUpdate(notas);
             con.commitTransaction();
         }
-
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
