@@ -13,11 +13,7 @@ import android.widget.Button;
 import android.app.DatePickerDialog;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.TextView;
-import androidx.appcompat.app.AppCompatActivity;
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 
 public class CalendarioFragment extends Fragment  {
@@ -66,7 +62,7 @@ public class CalendarioFragment extends Fragment  {
         DatePickerFragment newFragment = DatePickerFragment.newInstance(new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-                // +1 because January is zero
+                // +1 Porque enero es 0
                 final String selectedDate = day + "/" + (month+1) + "/" + year;
                 calendarioEditText.setText(selectedDate);
             }
