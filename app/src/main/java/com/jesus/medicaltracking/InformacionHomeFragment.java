@@ -27,7 +27,8 @@ public class InformacionHomeFragment extends Fragment {
 
             @Override
             public void onClick(View v) {
-                // TODO Auto-generated method stub
+
+                //Abre un activity desde un fragment
                 Intent intent = new Intent(getActivity(), DatosDiaActivity.class);
                 ((MainActivity) getActivity()).startActivity(intent);
 

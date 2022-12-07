@@ -3,17 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/navigation_inicio">
     <fragment
         android:id="@+id/navigation_informacion"
         android:name="com.jesus.medicaltracking.ui.informacion.InformacionFragment"
         android:label="@string/title_informacion"
         tools:layout="@layout/fragment_informacion" />
     <fragment
-        android:id="@+id/navigation_home"
-        android:name="com.jesus.medicaltracking.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/navigation_inicio"
+        android:name="com.jesus.medicaltracking.ui.inicio.InicioFragment"
+        android:label="@string/title_inicio"
+        tools:layout="@layout/fragment_inicio" />
 
     <fragment
         android:id="@+id/navigation_acerca_de"
