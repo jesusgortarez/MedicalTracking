@@ -16,18 +16,30 @@ import android.widget.EditText;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 public class CalendarioFragment extends Fragment  {
     Button configuracionButton;
     EditText calendarioEditText;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_calendario, container, false);
 
 
+        calendarioEditText = (EditText) v.findViewById(R.id.calendarioEditText);
         configuracionButton = (Button) v.findViewById(R.id.configuracionButton);
+
+        //Obtengo la fecha actual
+        Date cDate = new Date();
+        String fDate = new SimpleDateFormat("dd/MM/yyyy").format(cDate);
+        //Edita el EditText con la fecha actual
+        calendarioEditText.setText(fDate);
+
+
         configuracionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -39,7 +51,7 @@ public class CalendarioFragment extends Fragment  {
             }
         });
 
-        calendarioEditText = (EditText) v.findViewById(R.id.calendarioEditText);
+
         calendarioEditText.setOnClickListener(new View.OnClickListener(){
         @Override
         public void onClick(View v) {
@@ -55,7 +67,7 @@ public class CalendarioFragment extends Fragment  {
             @Override
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
                 // +1 because January is zero
-                final String selectedDate = day + " / " + (month+1) + " / " + year;
+                final String selectedDate = day + "/" + (month+1) + "/" + year;
                 calendarioEditText.setText(selectedDate);
             }
         });
