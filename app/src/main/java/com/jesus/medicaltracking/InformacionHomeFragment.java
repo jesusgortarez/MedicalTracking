@@ -14,17 +14,13 @@ import android.widget.Button;
 public class InformacionHomeFragment extends Fragment {
     Button diaButton;
 
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_informacion_home, container, false);
-        // Inflate the layout for this fragment
+
         diaButton = (Button) v.findViewById(R.id.diaButton);
-
         diaButton.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View v) {
 
