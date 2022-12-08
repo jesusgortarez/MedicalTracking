@@ -33,10 +33,9 @@ public class ConfigMedicamentoListFragment extends Fragment {
 
         listViewMedicamentos = view.findViewById(R.id.listViewMedicamentos);
 
-        ArrayAdapter<MedicamentosBD> adapter = new ArrayAdapter<MedicamentosBD>(getContext(),android.R.layout.simple_list_item_1,con.where(MedicamentosBD.class).findAll());
+        ArrayAdapter<MedicamentosBD> adapter = new ArrayAdapter<MedicamentosBD>(getContext().getApplicationContext(),android.R.layout.simple_list_item_1,con.where(MedicamentosBD.class).findAll());
 
         listViewMedicamentos.setAdapter(adapter);
-
 
 
         return view;
