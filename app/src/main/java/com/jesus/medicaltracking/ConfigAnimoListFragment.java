@@ -26,7 +26,6 @@ public class ConfigAnimoListFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-
         con = BaseDatos.getInstance().conectar(getContext());
         View view =  inflater.inflate(R.layout.fragment_config_animo_list, container, false);
         listViewAnimos = view.findViewById(R.id.listViewAnimos);
