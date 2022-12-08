@@ -1,13 +1,17 @@
 package com.jesus.medicaltracking;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
+import androidx.appcompat.app.AlertDialog;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Adapter;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -37,6 +41,32 @@ public class ConfigMedicamentoListFragment extends Fragment {
 
         listViewMedicamentos.setAdapter(adapter);
 
+        listViewMedicamentos.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView adapterView, View view, int i, long l) {
+
+                AlertDialog.Builder dialogo1 = new AlertDialog.Builder(getContext());
+                dialogo1.setTitle("Importante");
+                dialogo1.setMessage("¿ Elimina este medicamento?");
+                dialogo1.setCancelable(false);
+                dialogo1.setPositiveButton("Confirmar", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialogo1, int id) {
+                       String  elemento = (listViewMedicamentos.getItemAtPosition(i)).toString();
+                       con.beginTransaction();
+                       MedicamentosBD eliminar = con.where(MedicamentosBD.class).equalTo("nombre",elemento).findFirst();
+                       eliminar.deleteFromRealm();
+                       con.commitTransaction();
+                    }
+                });
+                dialogo1.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialogo1, int id) {
+                    }
+                });
+                dialogo1.show();
+
+                return false;
+            }
+        });
 
         return view;
     }
