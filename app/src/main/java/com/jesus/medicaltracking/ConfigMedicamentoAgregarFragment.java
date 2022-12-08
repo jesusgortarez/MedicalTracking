@@ -44,8 +44,6 @@ public class ConfigMedicamentoAgregarFragment extends Fragment {
                 con.commitTransaction();
 
                 fragmentlista = new ConfigMedicamentoListFragment();
-
-
                 getActivity().getSupportFragmentManager().beginTransaction().add(R.id.listaMedicamentosFragment,fragmentlista).commit();
                 transaction = getActivity().getSupportFragmentManager().beginTransaction();
                 transaction.replace(R.id.listaMedicamentosFragment,fragmentlista).commit();
