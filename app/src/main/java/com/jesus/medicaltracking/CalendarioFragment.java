@@ -44,7 +44,10 @@ public class CalendarioFragment extends Fragment  {
         //Edita el EditText con la fecha actual
         calendarioEditText.setText(fDate);
         FechaGlobal.fechaGlobal = fDate;
-
+        fragmentlista = new InformacionHomeFragment();
+        getActivity().getSupportFragmentManager().beginTransaction().add(R.id.informacionHomeFragmentContainerView,fragmentlista).commit();
+        transaction = getActivity().getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.informacionHomeFragmentContainerView,fragmentlista).commit();
         configuracionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

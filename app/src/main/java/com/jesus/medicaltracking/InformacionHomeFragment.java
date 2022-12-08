@@ -77,7 +77,7 @@ public class InformacionHomeFragment extends Fragment {
             listAcercaDeArrayList.add(new ListAcercaDe(4, "Medicamentos", "Sin medicamentos"));
         }
         else{
-            listAcercaDeArrayList.add(new ListAcercaDe(4, "Notas", fechasMedicamentosBD.getMedicamento()));
+            listAcercaDeArrayList.add(new ListAcercaDe(4, "Medicamentos", fechasMedicamentosBD.getMedicamento()));
         }
         ListAcercaDeAdapter listAcercaDeArrayAdapter = new ListAcercaDeAdapter(getActivity().getApplicationContext(),R.layout.item_acerca_de,listAcercaDeArrayList);
         listAcercaDeListView.setAdapter(listAcercaDeArrayAdapter);
