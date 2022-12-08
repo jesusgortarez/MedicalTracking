@@ -7,6 +7,7 @@ import android.widget.TextView;
 import com.jesus.medicaltracking.database.BaseDatos;
 import com.jesus.medicaltracking.model.AnimoBD;
 import com.jesus.medicaltracking.model.FechasMedicamentosBD;
+import com.jesus.medicaltracking.model.FechasSintomasBD;
 import com.jesus.medicaltracking.model.MedicamentosBD;
 import com.jesus.medicaltracking.model.NotasDB;
 
@@ -37,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
     public static AtomicInteger SintomaId = new AtomicInteger();
     public static AtomicInteger AnimoId = new AtomicInteger();
     public static AtomicInteger FechasId = new AtomicInteger();
+    public static AtomicInteger FechasSintomasId = new AtomicInteger();
+    public static AtomicInteger NotaId = new AtomicInteger();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
             NotasDB notas = new NotasDB();
             notas.setId(1);
             notas.setNota("Escribir observaciones");
-
             con.beginTransaction();
             con.copyToRealmOrUpdate(notas);
             con.commitTransaction();
@@ -56,6 +58,8 @@ public class MainActivity extends AppCompatActivity {
         SintomaId = setAtomicId(con, MedicamentosBD.class);
         AnimoId = setAtomicId(con,AnimoBD.class);
         FechasId = setAtomicId(con, FechasMedicamentosBD.class);
+        FechasSintomasId = setAtomicId(con, FechasSintomasBD.class);
+        NotaId = setAtomicId(con,NotasDB.class);
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());

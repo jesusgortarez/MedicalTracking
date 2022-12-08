@@ -14,18 +14,24 @@ import android.widget.Button;
 import android.app.DatePickerDialog;
 import android.widget.DatePicker;
 import android.widget.EditText;
+
+import com.jesus.medicaltracking.database.BaseDatos;
+import com.jesus.medicaltracking.model.NotasDB;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import io.realm.Realm;
 
 public class CalendarioFragment extends Fragment  {
     Button configuracionButton;
     EditText calendarioEditText;
-
+    private Realm con;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_calendario, container, false);
-
+        con = BaseDatos.getInstance().conectar(getContext());
 
         calendarioEditText = (EditText) v.findViewById(R.id.calendarioEditText);
         configuracionButton = (Button) v.findViewById(R.id.configuracionButton);
