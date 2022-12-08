@@ -1,5 +1,7 @@
 package com.jesus.medicaltracking.model;
 
+        import com.jesus.medicaltracking.MainActivity;
+
         import io.realm.RealmList;
         import io.realm.RealmObject;
         import io.realm.annotations.PrimaryKey;
@@ -14,8 +16,17 @@ public class FechasMedicamentosBD extends RealmObject {
     public  FechasMedicamentosBD(){}
 
     public FechasMedicamentosBD(String fecha, String medicamento){
+        id = MainActivity.FechasId.incrementAndGet();
         this.fecha = fecha;
         this.medicamento = medicamento;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getFecha() {
@@ -38,4 +49,6 @@ public class FechasMedicamentosBD extends RealmObject {
     public String toString() {
         return getMedicamento();
     }
+
+
 }
