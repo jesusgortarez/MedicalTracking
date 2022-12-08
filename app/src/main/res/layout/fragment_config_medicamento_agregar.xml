@@ -14,7 +14,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/medicamentoEditText"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="68dp"
             android:hint="Agregar Medicamento" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -24,6 +24,6 @@
         android:layout_height="wrap_content"
         android:text="Agregar"
         android:translationX="150dp"
-        android:translationY="75dp" />
+        android:translationY="100dp" />
 
 </FrameLayout>

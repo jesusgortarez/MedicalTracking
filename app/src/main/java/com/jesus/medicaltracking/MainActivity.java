@@ -5,6 +5,7 @@ import android.provider.MediaStore;
 import android.widget.TextView;
 
 import com.jesus.medicaltracking.database.BaseDatos;
+import com.jesus.medicaltracking.model.AnimoBD;
 import com.jesus.medicaltracking.model.MedicamentosBD;
 import com.jesus.medicaltracking.model.NotasDB;
 
@@ -32,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
 
     public static AtomicInteger MedicamentoId = new AtomicInteger();
+    public static AtomicInteger SintomaId = new AtomicInteger();
+    public static AtomicInteger AnimoId = new AtomicInteger();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
             con.commitTransaction();
         }
         MedicamentoId = setAtomicId(con, MedicamentosBD.class);
+        SintomaId = setAtomicId(con, MedicamentosBD.class);
+        AnimoId = setAtomicId(con,AnimoBD.class);
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());

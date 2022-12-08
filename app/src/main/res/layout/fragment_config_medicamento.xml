@@ -11,7 +11,7 @@
         android:id="@+id/configMedicamentoAgregarFragmentContainerView"
         android:name="com.jesus.medicaltracking.ConfigMedicamentoAgregarFragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="147dp"
         android:layout_weight="1"
         tools:layout="@layout/fragment_config_medicamento_agregar" />
 

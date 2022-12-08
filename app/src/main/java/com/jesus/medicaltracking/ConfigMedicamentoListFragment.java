@@ -44,7 +44,7 @@ public class ConfigMedicamentoListFragment extends Fragment {
 
                 AlertDialog.Builder dialogo1 = new AlertDialog.Builder(getContext());
                 dialogo1.setTitle("Importante");
-                dialogo1.setMessage("¿ Elimina este medicamento?");
+                dialogo1.setMessage("¿ Eliminar este medicamento?");
                 dialogo1.setCancelable(false);
                 dialogo1.setPositiveButton("Confirmar", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialogo1, int id) {

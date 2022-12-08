@@ -2,15 +2,15 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="322dp"
     tools:context=".ConfigAnimoListFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <ListView
+        android:id="@+id/listViewAnimos"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Aqui debe estar un listview de los animos existente en la base de datos, recuerda mostrar un mensaje de agregado correctamente
-        Ademas al hacer doble click en alguno de los animo debe eliminarlo, de preferencia con mensaje de advertencia y el mensaje de borrado correctamente" />
+        android:layout_height="322dp" />
 
 
 </FrameLayout>
