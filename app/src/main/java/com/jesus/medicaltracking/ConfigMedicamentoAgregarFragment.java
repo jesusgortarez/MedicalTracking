@@ -39,6 +39,7 @@ public class ConfigMedicamentoAgregarFragment extends Fragment {
                 con.copyToRealmOrUpdate(medicamento);
                 con.commitTransaction();
 
+
             }
         });
         return view;
