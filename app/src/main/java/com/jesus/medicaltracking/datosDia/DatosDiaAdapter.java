@@ -1,4 +1,4 @@
-package com.jesus.medicaltracking;
+package com.jesus.medicaltracking.datosDia;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;

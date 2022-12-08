@@ -1,4 +1,4 @@
-package com.jesus.medicaltracking;
+package com.jesus.medicaltracking.config;
 
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;

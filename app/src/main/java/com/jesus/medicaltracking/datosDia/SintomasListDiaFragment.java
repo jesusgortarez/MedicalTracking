@@ -1,4 +1,4 @@
-package com.jesus.medicaltracking;
+package com.jesus.medicaltracking.datosDia;
 
 import android.os.Bundle;
 
@@ -12,6 +12,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.jesus.medicaltracking.FechaGlobal;
+import com.jesus.medicaltracking.R;
 import com.jesus.medicaltracking.database.BaseDatos;
 import com.jesus.medicaltracking.model.FechasMedicamentosBD;
 import com.jesus.medicaltracking.model.FechasSintomasBD;
@@ -31,7 +33,7 @@ public class SintomasListDiaFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_sintomas_list_dia, container, false);
         con = BaseDatos.getInstance().conectar(getContext());
         listViewSintoma = view.findViewById(R.id.listViewDiaListTodos);
-        ArrayAdapter<FechasSintomasBD> adapter = new ArrayAdapter<FechasSintomasBD>(getContext().getApplicationContext(),android.R.layout.simple_list_item_1,con.where(FechasSintomasBD.class).equalTo("fecha",FechaGlobal.fechaGlobal).findAll());
+        ArrayAdapter<FechasSintomasBD> adapter = new ArrayAdapter<FechasSintomasBD>(getContext().getApplicationContext(),android.R.layout.simple_list_item_1,con.where(FechasSintomasBD.class).equalTo("fecha", FechaGlobal.fechaGlobal).findAll());
         listViewSintoma.setAdapter(adapter);
         Log.e("Base de datos",adapter.toString());
         return view;

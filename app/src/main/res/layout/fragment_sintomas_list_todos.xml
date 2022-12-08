@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="322dp"
-    tools:context=".SintomasListTodosFragment">
+    tools:context=".datosDia.SintomasListTodosFragment">
 
     <!-- TODO: Update blank fragment layout -->
 

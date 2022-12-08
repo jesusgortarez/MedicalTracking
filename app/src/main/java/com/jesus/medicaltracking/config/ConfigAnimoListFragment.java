@@ -1,4 +1,4 @@
-package com.jesus.medicaltracking;
+package com.jesus.medicaltracking.config;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -14,47 +14,47 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.jesus.medicaltracking.R;
 import com.jesus.medicaltracking.database.BaseDatos;
-import com.jesus.medicaltracking.model.FechasMedicamentosBD;
-import com.jesus.medicaltracking.model.MedicamentosBD;
+import com.jesus.medicaltracking.model.AnimoBD;
 
 import io.realm.Realm;
 
-public class MedicamentoListTodosFragment extends Fragment {
+public class ConfigAnimoListFragment extends Fragment {
     private Realm con;
-    private ListView listViewMedicamentoListTodos;
-
+    private ListView listViewAnimos;
     FragmentTransaction transaction;
     Fragment fragmentlista;
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
         con = BaseDatos.getInstance().conectar(getContext());
-        View view =  inflater.inflate(R.layout.fragment_medicamento_list_todos, container, false);
-        listViewMedicamentoListTodos = view.findViewById(R.id.listViewMedicamentoListTodos);
-        ArrayAdapter<MedicamentosBD> adapter = new ArrayAdapter<MedicamentosBD>(getContext().getApplicationContext(),android.R.layout.simple_list_item_1,con.where(MedicamentosBD.class).findAll());
-        listViewMedicamentoListTodos.setAdapter(adapter);
-        listViewMedicamentoListTodos.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+        View view =  inflater.inflate(R.layout.fragment_config_animo_list, container, false);
+        listViewAnimos = view.findViewById(R.id.listViewAnimos);
+        ArrayAdapter<AnimoBD> adapter = new ArrayAdapter<AnimoBD>(getContext().getApplicationContext(),android.R.layout.simple_list_item_1,con.where(AnimoBD.class).findAll());
+        listViewAnimos.setAdapter(adapter);
+
+        listViewAnimos.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView adapterView, View view, int i, long l) {
 
                 AlertDialog.Builder dialogo1 = new AlertDialog.Builder(getContext());
                 dialogo1.setTitle("Importante");
-                dialogo1.setMessage("Agregar este medicamento al dia con la fecha:"+ FechaGlobal.fechaGlobal);
+                dialogo1.setMessage("¿ Eliminar este estado de animo?");
                 dialogo1.setCancelable(false);
                 dialogo1.setPositiveButton("Confirmar", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialogo1, int id) {
-                        String  elemento = (listViewMedicamentoListTodos.getItemAtPosition(i)).toString();
+                        String  elemento = (listViewAnimos.getItemAtPosition(i)).toString();
                         con.beginTransaction();
-                        FechasMedicamentosBD medicamento =new FechasMedicamentosBD(FechaGlobal.fechaGlobal,elemento);
-                        con.copyToRealmOrUpdate(medicamento);
+                        AnimoBD eliminar = con.where(AnimoBD.class).equalTo("nombre",elemento).findFirst();
+                        eliminar.deleteFromRealm();
                         con.commitTransaction();
-
-                        fragmentlista = new MedicamentoListDiaFragment();
-                        getActivity().getSupportFragmentManager().beginTransaction().add(R.id.MedicamentoListDiaFragmentContainerView,fragmentlista).commit();
+                        fragmentlista = new ConfigAnimoListFragment();
+                        getActivity().getSupportFragmentManager().beginTransaction().add(R.id.configAnimoListFragmentContainerView,fragmentlista).commit();
                         transaction = getActivity().getSupportFragmentManager().beginTransaction();
-                        transaction.replace(R.id.MedicamentoListDiaFragmentContainerView,fragmentlista).commit();
+                        transaction.replace(R.id.configAnimoListFragmentContainerView,fragmentlista).commit();
+
                     }
                 });
                 dialogo1.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
@@ -66,7 +66,8 @@ public class MedicamentoListTodosFragment extends Fragment {
                 return false;
             }
         });
-        // Inflate the layout for this fragment
+
+
         return view;
     }
 }

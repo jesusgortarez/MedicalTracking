@@ -5,11 +5,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:weightSum="6"
-    tools:context=".ConfigSintomasFragment">
+    tools:context=".config.ConfigSintomasFragment">
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/configSintomasAgregarFragmentContainerView"
-        android:name="com.jesus.medicaltracking.ConfigSintomasAgregarFragment"
+        android:name="com.jesus.medicaltracking.config.ConfigSintomasAgregarFragment"
         android:layout_width="match_parent"
         android:layout_height="147dp"
         android:layout_weight="1"
@@ -17,7 +17,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/configSintomasListFragmentContainerView"
-        android:name="com.jesus.medicaltracking.ConfigSintomasListFragment"
+        android:name="com.jesus.medicaltracking.config.ConfigSintomasListFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="5"

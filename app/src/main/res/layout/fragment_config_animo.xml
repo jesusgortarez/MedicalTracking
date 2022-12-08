@@ -5,11 +5,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:weightSum="6"
-    tools:context=".ConfigAnimoFragment">
+    tools:context=".config.ConfigAnimoFragment">
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/configAnimoAgregarFragmentContainerView"
-        android:name="com.jesus.medicaltracking.ConfigAnimoAgregarFragment"
+        android:name="com.jesus.medicaltracking.config.ConfigAnimoAgregarFragment"
         android:layout_width="match_parent"
         android:layout_height="147dp"
         android:layout_weight="1"
@@ -17,7 +17,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/configAnimoListFragmentContainerView"
-        android:name="com.jesus.medicaltracking.ConfigAnimoListFragment"
+        android:name="com.jesus.medicaltracking.config.ConfigAnimoListFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="5"

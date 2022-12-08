@@ -5,11 +5,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:weightSum="6"
-    tools:context=".MedicamentoFragment">
+    tools:context=".datosDia.MedicamentoFragment">
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/MedicamentoListDiaFragmentContainerView"
-        android:name="com.jesus.medicaltracking.MedicamentoListDiaFragment"
+        android:name="com.jesus.medicaltracking.datosDia.MedicamentoListDiaFragment"
         android:layout_width="match_parent"
         android:layout_height="147dp"
         android:layout_weight="3"
@@ -17,7 +17,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/MedicamentoListTodosFragmentContainerView"
-        android:name="com.jesus.medicaltracking.MedicamentoListTodosFragment"
+        android:name="com.jesus.medicaltracking.datosDia.MedicamentoListTodosFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="3"

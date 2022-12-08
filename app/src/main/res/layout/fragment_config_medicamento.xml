@@ -5,12 +5,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:weightSum="6"
-    tools:context=".ConfigMedicamentoFragment"
+    tools:context=".config.ConfigMedicamentoFragment"
     android:id="@+id/configMedicamentoFragmentContainerView">
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/configMedicamentoAgregarFragmentContainerView"
-        android:name="com.jesus.medicaltracking.ConfigMedicamentoAgregarFragment"
+        android:name="com.jesus.medicaltracking.config.ConfigMedicamentoAgregarFragment"
         android:layout_width="match_parent"
         android:layout_height="147dp"
         android:layout_weight="1"
@@ -18,7 +18,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/configMedicamentoListFragmentContainerView"
-        android:name="com.jesus.medicaltracking.ConfigMedicamentoListFragment"
+        android:name="com.jesus.medicaltracking.config.ConfigMedicamentoListFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="5"

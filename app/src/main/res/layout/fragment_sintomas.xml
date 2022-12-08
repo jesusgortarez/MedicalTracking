@@ -5,11 +5,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:weightSum="6"
-    tools:context=".SintomasFragment">
+    tools:context=".datosDia.SintomasFragment">
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/SintomasListDiaFragmentContainerView"
-        android:name="com.jesus.medicaltracking.SintomasListDiaFragment"
+        android:name="com.jesus.medicaltracking.datosDia.SintomasListDiaFragment"
         android:layout_width="match_parent"
         android:layout_height="147dp"
         android:layout_weight="3"
@@ -17,7 +17,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/SintomasListTodosFragmentContainerView"
-        android:name="com.jesus.medicaltracking.SintomasListTodosFragment"
+        android:name="com.jesus.medicaltracking.datosDia.SintomasListTodosFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="3"

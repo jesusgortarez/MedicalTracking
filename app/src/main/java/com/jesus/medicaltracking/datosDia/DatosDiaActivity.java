@@ -1,4 +1,4 @@
-package com.jesus.medicaltracking;
+package com.jesus.medicaltracking.datosDia;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentPagerAdapter;
@@ -7,6 +7,8 @@ import androidx.viewpager.widget.ViewPager;
 import android.os.Bundle;
 
 import com.google.android.material.tabs.TabLayout;
+import com.jesus.medicaltracking.NotasFragment;
+import com.jesus.medicaltracking.R;
 
 public class DatosDiaActivity extends AppCompatActivity {
 

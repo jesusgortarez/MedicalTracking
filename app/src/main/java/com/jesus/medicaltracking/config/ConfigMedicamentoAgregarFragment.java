@@ -1,21 +1,19 @@
-package com.jesus.medicaltracking;
+package com.jesus.medicaltracking.config;
 
-import android.graphics.Bitmap;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.jesus.medicaltracking.R;
 import com.jesus.medicaltracking.database.BaseDatos;
 import com.jesus.medicaltracking.model.MedicamentosBD;
-import com.jesus.medicaltracking.model.NotasDB;
 
 import io.realm.Realm;
 

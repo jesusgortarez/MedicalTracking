@@ -1,4 +1,4 @@
-package com.jesus.medicaltracking;
+package com.jesus.medicaltracking.config;
 
 import android.os.Bundle;
 
@@ -11,9 +11,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.jesus.medicaltracking.R;
 import com.jesus.medicaltracking.database.BaseDatos;
 import com.jesus.medicaltracking.model.AnimoBD;
-import com.jesus.medicaltracking.model.MedicamentosBD;
 
 import io.realm.Realm;
 

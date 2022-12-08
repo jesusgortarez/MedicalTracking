@@ -14,14 +14,14 @@
         android:theme="@style/Theme.MedicalTracking"
         tools:targetApi="31">
         <activity
-            android:name=".ConfigActivity"
+            android:name=".config.ConfigActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".DatosDiaActivity"
+            android:name=".datosDia.DatosDiaActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

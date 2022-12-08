@@ -1,4 +1,4 @@
-package com.jesus.medicaltracking;
+package com.jesus.medicaltracking.config;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -14,8 +14,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.jesus.medicaltracking.R;
 import com.jesus.medicaltracking.database.BaseDatos;
-import com.jesus.medicaltracking.model.MedicamentosBD;
 import com.jesus.medicaltracking.model.SintomasBD;
 
 import io.realm.Realm;

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="322dp"
-    tools:context=".MedicamentoListDiaFragment">
+    tools:context=".datosDia.MedicamentoListDiaFragment">
 
     <!-- TODO: Update blank fragment layout -->
 

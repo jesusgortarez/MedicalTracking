@@ -1,4 +1,4 @@
-package com.jesus.medicaltracking;
+package com.jesus.medicaltracking.datosDia;
 
 import android.os.Bundle;
 
@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.jesus.medicaltracking.FechaGlobal;
+import com.jesus.medicaltracking.R;
 import com.jesus.medicaltracking.database.BaseDatos;
 import com.jesus.medicaltracking.model.FechasAnimoBD;
 
@@ -32,7 +34,7 @@ public class AnimoListDiaFragment extends Fragment {
         View view =  inflater.inflate(R.layout.fragment_medicamento_list_dia, container, false);
         con = BaseDatos.getInstance().conectar(getContext());
         listViewAnimo = view.findViewById(R.id.listViewMedicamentoListDia);
-        ArrayAdapter<FechasAnimoBD> adapter = new ArrayAdapter<FechasAnimoBD>(getContext().getApplicationContext(),android.R.layout.simple_list_item_1,con.where(FechasAnimoBD.class).equalTo("fecha",FechaGlobal.fechaGlobal).findAll());
+        ArrayAdapter<FechasAnimoBD> adapter = new ArrayAdapter<FechasAnimoBD>(getContext().getApplicationContext(),android.R.layout.simple_list_item_1,con.where(FechasAnimoBD.class).equalTo("fecha", FechaGlobal.fechaGlobal).findAll());
         listViewAnimo.setAdapter(adapter);
 
         return view;

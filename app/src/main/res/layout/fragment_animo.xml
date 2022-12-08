@@ -5,11 +5,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:weightSum="6"
-    tools:context=".AnimoFragment">
+    tools:context=".datosDia.AnimoFragment">
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/AnimoListDiaFragmentContainerView"
-        android:name="com.jesus.medicaltracking.AnimoListDiaFragment"
+        android:name="com.jesus.medicaltracking.datosDia.AnimoListDiaFragment"
         android:layout_width="match_parent"
         android:layout_height="147dp"
         android:layout_weight="3"
@@ -17,7 +17,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/AnimoListTodosFragmentContainerView"
-        android:name="com.jesus.medicaltracking.AnimoListTodosFragment"
+        android:name="com.jesus.medicaltracking.datosDia.AnimoListTodosFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="3"
