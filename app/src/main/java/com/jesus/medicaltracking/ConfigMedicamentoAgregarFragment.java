@@ -1,5 +1,6 @@
 package com.jesus.medicaltracking;
 
+import android.graphics.Bitmap;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;

@@ -16,4 +16,5 @@ public class ConfigMedicamentoFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_config_medicamento, container, false);
     }
+
 }

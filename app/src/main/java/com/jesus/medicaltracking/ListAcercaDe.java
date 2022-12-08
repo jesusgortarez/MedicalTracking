@@ -36,9 +36,12 @@ public class ListAcercaDe {
         this.data = data;
     }
 
+    public String datos() {
+        return getData();
+    }
 
-    @Override
-    public String toString() {
+    public String nombre() {
         return getName();
     }
+
 }

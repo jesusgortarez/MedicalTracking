@@ -1,12 +1,18 @@
 package com.jesus.medicaltracking;
 
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ConfigAdapter extends FragmentPagerAdapter {
 
@@ -17,10 +23,11 @@ public class ConfigAdapter extends FragmentPagerAdapter {
         super(fm, behavior);
     }
 
+
+
     @NonNull
     @Override
     public Fragment getItem(int position) {
-
         return fragmentArrayList.get(position);
     }
     @Override
@@ -29,10 +36,8 @@ public class ConfigAdapter extends FragmentPagerAdapter {
     }
 
     public void addFragment(Fragment fragment, String title){
-
         fragmentArrayList.add(fragment);
         fragmentTitle.add(title);
-
     }
 
     @Nullable
@@ -40,4 +45,7 @@ public class ConfigAdapter extends FragmentPagerAdapter {
     public CharSequence getPageTitle(int position) {
         return fragmentTitle.get(position);
     }
+
+
+
 }
