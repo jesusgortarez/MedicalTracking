@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -65,6 +66,7 @@ public class CalendarioFragment extends Fragment  {
                 // +1 Porque enero es 0
                 final String selectedDate = day + "/" + (month+1) + "/" + year;
                 calendarioEditText.setText(selectedDate);
+                FechaGlobal.fechaGlobal = calendarioEditText.getText().toString();
             }
         });
 
