@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
-
+import androidx.viewpager.widget.PagerAdapter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -22,8 +22,6 @@ public class ConfigAdapter extends FragmentPagerAdapter {
     public ConfigAdapter(@NonNull FragmentManager fm, int behavior) {
         super(fm, behavior);
     }
-
-
 
     @NonNull
     @Override
@@ -45,7 +43,5 @@ public class ConfigAdapter extends FragmentPagerAdapter {
     public CharSequence getPageTitle(int position) {
         return fragmentTitle.get(position);
     }
-
-
 
 }

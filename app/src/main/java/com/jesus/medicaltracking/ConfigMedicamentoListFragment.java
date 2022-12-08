@@ -29,6 +29,8 @@ public class ConfigMedicamentoListFragment extends Fragment {
     private Realm con;
     private ListView listViewMedicamentos;
 
+    FragmentTransaction transaction;
+    Fragment fragmentlista;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -53,6 +55,11 @@ public class ConfigMedicamentoListFragment extends Fragment {
                        MedicamentosBD eliminar = con.where(MedicamentosBD.class).equalTo("nombre",elemento).findFirst();
                        eliminar.deleteFromRealm();
                        con.commitTransaction();
+                        fragmentlista = new ConfigMedicamentoListFragment();
+
+                        getActivity().getSupportFragmentManager().beginTransaction().add(R.id.configMedicamentoListFragmentContainerView,fragmentlista).commit();
+                        transaction = getActivity().getSupportFragmentManager().beginTransaction();
+                        transaction.replace(R.id.configMedicamentoListFragmentContainerView,fragmentlista).commit();
                     }
                 });
                 dialogo1.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
@@ -67,5 +74,11 @@ public class ConfigMedicamentoListFragment extends Fragment {
 
         return view;
     }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+    }
+
 
 }

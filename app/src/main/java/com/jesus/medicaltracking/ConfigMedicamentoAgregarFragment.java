@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +24,7 @@ public class ConfigMedicamentoAgregarFragment extends Fragment {
 
     FragmentTransaction transaction;
     Fragment fragmentlista;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -35,6 +37,9 @@ public class ConfigMedicamentoAgregarFragment extends Fragment {
         Button boton = (Button) view.findViewById(R.id.agregarButton);
         TextView texto =(TextView) view.findViewById(R.id.medicamentoEditText);
 
+
+
+
         boton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -44,9 +49,30 @@ public class ConfigMedicamentoAgregarFragment extends Fragment {
                 con.commitTransaction();
 
                 fragmentlista = new ConfigMedicamentoListFragment();
-                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.listaMedicamentosFragment,fragmentlista).commit();
+
+                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.configMedicamentoListFragmentContainerView,fragmentlista).commit();
                 transaction = getActivity().getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.listaMedicamentosFragment,fragmentlista).commit();
+                transaction.replace(R.id.configMedicamentoListFragmentContainerView,fragmentlista).commit();
+                /*
+                ConfigMedicamentoListFragment configMedicamentoListFragment =  (ConfigMedicamentoListFragment)
+                        getFragmentManager().findFragmentById(R.id.configMedicamentoListFragmentContainerView);
+
+                Log.e("a ver que tiene", configMedicamentoListFragment.toString());
+
+
+
+                fragmentlista = new ConfigMedicamentoListFragment();
+
+                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.configMedicamentoListFragmentContainerView,fragmentlista).commit();
+                transaction = getActivity().getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.configMedicamentoListFragmentContainerView,fragmentlista).commit();
+                */
+
+                /*fragmentlista.onDestroy();
+                configMedicamentoListFragment.onDestroy();
+                configMedicamentoListFragment.notifyDataSetChanged();
+                ((ConfigActivity) getActivity()).dataChanged();
+*/
 
             }
         });

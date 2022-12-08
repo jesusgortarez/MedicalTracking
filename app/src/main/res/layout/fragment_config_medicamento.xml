@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:weightSum="6"
-    tools:context=".ConfigMedicamentoFragment">
+    tools:context=".ConfigMedicamentoFragment"
+    android:id="@+id/configMedicamentoFragmentContainerView">
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/configMedicamentoAgregarFragmentContainerView"
