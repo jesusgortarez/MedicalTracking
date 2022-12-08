@@ -1,15 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="6"
     tools:context=".SintomasFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/SintomasListDiaFragmentContainerView"
+        android:name="com.jesus.medicaltracking.SintomasListDiaFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Fragment debe de tener un listview de los sintomas existentes en la base de datos, y en cualquier otro color los que esten agregados a la base de datos de este dia" />
+        android:layout_height="147dp"
+        android:layout_weight="3"
+        tools:layout="@layout/fragment_sintomas_list_dia" />
 
-
-</FrameLayout>
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/SintomasListTodosFragmentContainerView"
+        android:name="com.jesus.medicaltracking.SintomasListTodosFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        tools:layout="@layout/fragment_sintomas_list_todos" />
+</LinearLayout>

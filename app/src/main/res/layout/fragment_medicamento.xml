@@ -1,14 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="6"
     tools:context=".MedicamentoFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/MedicamentoListDiaFragmentContainerView"
+        android:name="com.jesus.medicaltracking.MedicamentoListDiaFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Fragment debe de tener un listview de los medicamentos existentes en la base de datos, y en cualquier otro color los que esten agregados a la base de datos de este dia" />
+        android:layout_height="147dp"
+        android:layout_weight="3"
+        tools:layout="@layout/fragment_medicamento_list_dia" />
 
-</FrameLayout>
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/MedicamentoListTodosFragmentContainerView"
+        android:name="com.jesus.medicaltracking.MedicamentoListTodosFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        tools:layout="@layout/fragment_medicamento_list_todos" />
+</LinearLayout>

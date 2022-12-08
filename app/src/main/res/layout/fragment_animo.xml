@@ -1,14 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="6"
     tools:context=".AnimoFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/AnimoListDiaFragmentContainerView"
+        android:name="com.jesus.medicaltracking.AnimoListDiaFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Fragment animo" />
+        android:layout_height="147dp"
+        android:layout_weight="3"
+        tools:layout="@layout/fragment_animo_list_dia" />
 
-</FrameLayout>
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/AnimoListTodosFragmentContainerView"
+        android:name="com.jesus.medicaltracking.AnimoListTodosFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        tools:layout="@layout/fragment_animo_list_todos" />
+</LinearLayout>
