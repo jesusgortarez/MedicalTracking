@@ -10,7 +10,7 @@
     <ListView
         android:id="@+id/listViewAnimos"
         android:layout_width="match_parent"
-        android:layout_height="322dp" />
-
+        android:layout_height="322dp"
+        android:background="@color/white" />
 
 </FrameLayout>

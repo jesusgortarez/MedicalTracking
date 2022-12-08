@@ -19,6 +19,8 @@ import io.realm.Realm;
 
 public class ConfigSintomasAgregarFragment extends Fragment {
     private Realm con;
+    FragmentTransaction transaction;
+    Fragment fragmentlista;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -37,6 +39,10 @@ public class ConfigSintomasAgregarFragment extends Fragment {
                 SintomasBD sintoma =new SintomasBD(texto.getText().toString());
                 con.copyToRealmOrUpdate(sintoma);
                 con.commitTransaction();
+                fragmentlista = new ConfigSintomasListFragment();
+                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.configSintomasListFragmentContainerView,fragmentlista).commit();
+                transaction = getActivity().getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.configSintomasListFragmentContainerView,fragmentlista).commit();
 
 
             }

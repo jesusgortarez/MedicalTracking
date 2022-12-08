@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,6 +23,8 @@ import io.realm.Realm;
 public class ConfigAnimoListFragment extends Fragment {
     private Realm con;
     private ListView listViewAnimos;
+    FragmentTransaction transaction;
+    Fragment fragmentlista;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -47,6 +50,11 @@ public class ConfigAnimoListFragment extends Fragment {
                         AnimoBD eliminar = con.where(AnimoBD.class).equalTo("nombre",elemento).findFirst();
                         eliminar.deleteFromRealm();
                         con.commitTransaction();
+                        fragmentlista = new ConfigAnimoListFragment();
+                        getActivity().getSupportFragmentManager().beginTransaction().add(R.id.configAnimoListFragmentContainerView,fragmentlista).commit();
+                        transaction = getActivity().getSupportFragmentManager().beginTransaction();
+                        transaction.replace(R.id.configAnimoListFragmentContainerView,fragmentlista).commit();
+
                     }
                 });
                 dialogo1.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {

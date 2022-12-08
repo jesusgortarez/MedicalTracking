@@ -3,6 +3,7 @@ package com.jesus.medicaltracking;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,7 +19,8 @@ import io.realm.Realm;
 
 public class ConfigAnimoAgregarFragment extends Fragment {
     private Realm con;
-
+    FragmentTransaction transaction;
+    Fragment fragmentlista;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -37,7 +39,10 @@ public class ConfigAnimoAgregarFragment extends Fragment {
                 AnimoBD animo =new AnimoBD(texto.getText().toString());
                 con.copyToRealmOrUpdate(animo);
                 con.commitTransaction();
-
+                fragmentlista = new ConfigAnimoListFragment();
+                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.configAnimoListFragmentContainerView,fragmentlista).commit();
+                transaction = getActivity().getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.configAnimoListFragmentContainerView,fragmentlista).commit();
 
             }
         });
