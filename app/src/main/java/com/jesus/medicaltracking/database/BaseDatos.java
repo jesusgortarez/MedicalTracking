@@ -18,7 +18,7 @@ public class BaseDatos {
     public Realm conectar(Context context){
          if (con==null){
              Realm.init(context);
-             String nombre="BaseD222";
+             String nombre="BaseD2222";
              RealmConfiguration config = new RealmConfiguration.Builder().name(nombre).build();
              con = Realm.getInstance(config);
          }

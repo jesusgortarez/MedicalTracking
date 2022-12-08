@@ -35,7 +35,7 @@ public class CalendarioFragment extends Fragment  {
         String fDate = new SimpleDateFormat("dd/MM/yyyy").format(cDate);
         //Edita el EditText con la fecha actual
         calendarioEditText.setText(fDate);
-
+        FechaGlobal.fechaGlobal = calendarioEditText.getText().toString();
 
         configuracionButton.setOnClickListener(new View.OnClickListener() {
             @Override
