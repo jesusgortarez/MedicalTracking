@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -26,6 +27,8 @@ import io.realm.Realm;
 public class CalendarioFragment extends Fragment  {
     Button configuracionButton;
     EditText calendarioEditText;
+    FragmentTransaction transaction;
+    Fragment fragmentlista;
     private Realm con;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -41,7 +44,7 @@ public class CalendarioFragment extends Fragment  {
         String fDate = new SimpleDateFormat("dd/MM/yyyy").format(cDate);
         //Edita el EditText con la fecha actual
         calendarioEditText.setText(fDate);
-        FechaGlobal.fechaGlobal = calendarioEditText.getText().toString();
+        FechaGlobal.fechaGlobal = fDate;
 
         configuracionButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,6 +76,12 @@ public class CalendarioFragment extends Fragment  {
                 final String selectedDate = day + "/" + (month+1) + "/" + year;
                 calendarioEditText.setText(selectedDate);
                 FechaGlobal.fechaGlobal = calendarioEditText.getText().toString();
+
+                fragmentlista = new InformacionHomeFragment();
+                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.informacionHomeFragmentContainerView,fragmentlista).commit();
+                transaction = getActivity().getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.informacionHomeFragmentContainerView,fragmentlista).commit();
+
             }
         });
 
