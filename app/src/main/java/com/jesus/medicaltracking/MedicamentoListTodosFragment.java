@@ -51,6 +51,10 @@ public class MedicamentoListTodosFragment extends Fragment {
                         con.copyToRealmOrUpdate(medicamento);
                         con.commitTransaction();
 
+                        fragmentlista = new MedicamentoListDiaFragment();
+                        getActivity().getSupportFragmentManager().beginTransaction().add(R.id.MedicamentoListDiaFragmentContainerView,fragmentlista).commit();
+                        transaction = getActivity().getSupportFragmentManager().beginTransaction();
+                        transaction.replace(R.id.MedicamentoListDiaFragmentContainerView,fragmentlista).commit();
                     }
                 });
                 dialogo1.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
