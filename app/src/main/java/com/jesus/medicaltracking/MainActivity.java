@@ -1,12 +1,16 @@
 package com.jesus.medicaltracking;
 
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.widget.TextView;
 
 import com.jesus.medicaltracking.database.BaseDatos;
+import com.jesus.medicaltracking.model.MedicamentosBD;
 import com.jesus.medicaltracking.model.NotasDB;
 
 import io.realm.Realm;
+import io.realm.RealmObject;
+import io.realm.RealmResults;
 
 //agregue comentario
 
@@ -20,10 +24,14 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.jesus.medicaltracking.databinding.ActivityMainBinding;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class MainActivity extends AppCompatActivity {
 
     private Realm con;
     private ActivityMainBinding binding;
+
+    public static AtomicInteger MedicamentoId = new AtomicInteger();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
             con.copyToRealmOrUpdate(notas);
             con.commitTransaction();
         }
+        MedicamentoId = setAtomicId(con, MedicamentosBD.class);
+
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
@@ -52,5 +62,11 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
     }
+
+    private <T extends RealmObject> AtomicInteger setAtomicId(Realm realm, Class<T> anyClass){
+        RealmResults<T> results = realm.where(anyClass).findAll();
+        return (results.size() > 0 )? new AtomicInteger(results.max("id").intValue()): new AtomicInteger();
+    }
+
 
 }

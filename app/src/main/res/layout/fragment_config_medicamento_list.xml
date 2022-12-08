@@ -6,11 +6,11 @@
     tools:context=".ConfigMedicamentoListFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <ListView
+        android:id="@+id/listViewMedicamentos"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Aqui debe estar un listview de los medicamentes existente en la base de datos, recuerda mostrar un mensaje de agregado correctamente
-        Ademas al hacer doble click en alguno de los medicamentos debe eliminarlo, de preferencia con mensaje de advertencia y el mensaje de borrado correctamente" />
+        android:layout_height="196dp" />
 
 </FrameLayout>
 
