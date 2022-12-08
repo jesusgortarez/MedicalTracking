@@ -1,5 +1,6 @@
 package com.jesus.medicaltracking;
 
+import android.graphics.Bitmap;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -38,7 +39,6 @@ public class ConfigMedicamentoAgregarFragment extends Fragment {
                 MedicamentosBD medicamento =new MedicamentosBD(texto.getText().toString());
                 con.copyToRealmOrUpdate(medicamento);
                 con.commitTransaction();
-
 
             }
         });

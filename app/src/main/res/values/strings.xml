@@ -7,4 +7,7 @@
     <string name="title_acerca_de">Acerca de la app</string>
     <string name="title_informacion">Información</string>
     <string name="configuracion">Configuración</string>
+    <string name="tag_version">Versión</string>
+    <string name="tag_last_ver">Fecha de Última Versión</string>
+    <string name="tag_designers">Diseñadores</string>
 </resources>

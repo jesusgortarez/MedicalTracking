@@ -33,8 +33,8 @@ public class ListAcercaDeAdapter extends ArrayAdapter<ListAcercaDe> {
         TextView listAcercaDeNameTextView = convertView.findViewById(R.id.listAcercaDeNameTextView);
         TextView listAcercaDeDataTextView = convertView.findViewById(R.id.listAcercaDeDataTextView);
 
-        listAcercaDeNameTextView.setText(listAcercaDe.get(position).toString());
-        listAcercaDeDataTextView.setText(listAcercaDe.get(position).toString());
+        listAcercaDeNameTextView.setText(listAcercaDe.get(position).getName());
+        listAcercaDeDataTextView.setText(listAcercaDe.get(position).getData());
         return convertView;
     }
 }

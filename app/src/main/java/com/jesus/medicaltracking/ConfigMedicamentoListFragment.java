@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.appcompat.app.AlertDialog;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -27,18 +28,14 @@ import io.realm.RealmResults;
 public class ConfigMedicamentoListFragment extends Fragment {
     private Realm con;
     private ListView listViewMedicamentos;
-;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         con = BaseDatos.getInstance().conectar(getContext());
         View view =  inflater.inflate(R.layout.fragment_config_medicamento_list, container, false);
-
         listViewMedicamentos = view.findViewById(R.id.listViewMedicamentos);
-
         ArrayAdapter<MedicamentosBD> adapter = new ArrayAdapter<MedicamentosBD>(getContext().getApplicationContext(),android.R.layout.simple_list_item_1,con.where(MedicamentosBD.class).findAll());
-
         listViewMedicamentos.setAdapter(adapter);
 
         listViewMedicamentos.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
@@ -70,4 +67,5 @@ public class ConfigMedicamentoListFragment extends Fragment {
 
         return view;
     }
+
 }
