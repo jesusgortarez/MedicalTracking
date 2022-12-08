@@ -4,11 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
     app:startDestination="@+id/navigation_inicio">
+    <!--
     <fragment
         android:id="@+id/navigation_informacion"
         android:name="com.jesus.medicaltracking.ui.informacion.InformacionFragment"
         android:label="@string/title_informacion"
         tools:layout="@layout/fragment_informacion" />
+    -->
     <fragment
         android:id="@+id/navigation_inicio"
         android:name="com.jesus.medicaltracking.ui.inicio.InicioFragment"
@@ -20,6 +22,7 @@
         android:name="com.jesus.medicaltracking.ui.acercaDe.AcercaDeFragment"
         android:label="@string/title_acerca_de"
         tools:layout="@layout/fragment_acerca_de" />
+
 
 
 </navigation>
